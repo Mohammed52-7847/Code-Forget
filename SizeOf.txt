@@ -1,0 +1,21 @@
+#include "iostream"
+using namespace std;
+
+int main()
+{
+	cout << "short  : " << sizeof(short) << "\n";
+	cout << "long   : " << sizeof(long) << "\n";
+	cout << "int    : " << sizeof(int) << "\n";
+	cout << "float  : " << sizeof(float) << "\n";
+	cout << "double : " << sizeof(double) << "\n";
+	cout << "char   : " << sizeof(char) << "\n";
+	cout << "wchar_t: " << sizeof(wchar_t) << "\n";
+	cout << "bool   : " << sizeof(bool) << "\n";
+	cout << "string : " << sizeof(string) << "\n";
+	
+	
+	
+	system("pause>0");
+	return 0;
+
+}

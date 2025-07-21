@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void Fun1(short n)
+{
+	short x = n;
+	while (x > 0)
+	{
+		x = x / 2;
+		//x /= 2;
+		cout << x << endl;
+	}
+}
+int main()
+{
+	Fun1(50);
+
+	system("pause>0");
+	return 0;
+}

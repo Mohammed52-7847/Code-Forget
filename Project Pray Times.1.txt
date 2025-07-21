@@ -1,0 +1,42 @@
+﻿#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// هيكل لتخزين مواعيد الأذان في اليوم
+struct PrayerTimes {
+    int fajr;
+    int dhuhr;
+    int asr;
+    int maghrib;
+    int isha;
+};
+
+// وظيفة لعرض مواعيد الصلاة
+void displayPrayerTimes(int day, PrayerTimes pt) {
+    cout << "Day " << day << " Prayer Times: " << endl;
+    cout << "Fajr: " << pt.fajr << ":00 AM" << endl;
+    cout << "Dhuhr: " << pt.dhuhr << ":00 PM" << endl;
+    cout << "Asr: " << pt.asr << ":00 PM" << endl;
+    cout << "Maghrib: " << pt.maghrib << ":00 PM" << endl;
+    cout << "Isha: " << pt.isha << ":00 PM" << endl;
+    cout << "--------------------------------------" << endl;
+}
+
+int main() {
+    // افترض أن هذه هي مواعيد الصلاة لأيام من السنة بشكل تقريبي
+    vector<PrayerTimes> yearlyPrayerTimes;
+    
+    // إضافة بيانات مواعيد الصلاة (مثال مبدئي)
+    // فرضاً، نضيف مواعيد الصلاة ليوم واحد فقط ثم نكرر للـ 365 يوم
+    for (int day = 1; day <= 365; day++) {
+        PrayerTimes pt = {5, 12, 3, 6, 8};  // مواعيد ثابتة للمثال (5AM، 12PM، إلخ)
+        yearlyPrayerTimes.push_back(pt);  // إضافة مواعيد كل يوم
+    }
+    
+    // عرض مواعيد الصلاة ليوم 1 (كمثال)
+    displayPrayerTimes(1, yearlyPrayerTimes[0]);
+
+    return 0;
+}

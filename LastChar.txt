@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+char GetLastNumber(string S1)
+{
+	return S1[S1.length()-1];
+}
+int main()
+{
+	cout << "Number: " << GetLastNumber("Mohammed") << "\n";
+
+	system("pause>0");
+	return 0;
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+int main()
+{
+	stack<int>vNumbers;
+	vNumbers.push(10);
+	vNumbers.push(20);
+	vNumbers.push(30);
+	cout << "Count: " << vNumbers.size() << endl;
+	cout << "Result: " << vNumbers.empty() << endl;
+	cout << "Number: " << vNumbers.top() << endl;
+    vNumbers.pop();
+	system("pause>0");
+	return 0;
+}

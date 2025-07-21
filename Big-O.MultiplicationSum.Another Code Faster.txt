@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int MultiplicationSum(short n)
+{
+	int Sum = 0;
+	int i = 1;
+	int j = 1;
+	
+	Sum = Sum + ((i + n) * 5) * ((j + n) * 5);
+		
+	
+	return Sum;
+}
+int main()
+{
+	cout << "Result = " << MultiplicationSum(10) << "\n";
+
+	system("pause>0");
+	return 0;
+}

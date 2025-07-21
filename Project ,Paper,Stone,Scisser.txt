@@ -1,0 +1,170 @@
+#include <cstdlib>
+#include <string>
+#include <iostream>
+using namespace std;
+enum enUse{Stone = 1,Paper = 2,Scisser = 3};
+
+int RandomNumber(int From, int To)
+{
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+string Do()
+{
+	string t = "";
+	for (int i = 1; i < 3; i++)
+	{
+		t = t + "\t";
+		cout << t;
+	}
+	return t;
+}
+int ReadNumber()
+{
+	int Number = 0;
+	cout << "\n";
+	cout << Do() << "Please Enter a number between 1 and 3? ";
+	cin >> Number;
+
+	while (Number < 1 ||Number > 3)
+
+	{
+		cout << "\a";
+		system("color 4F");
+
+		cout <<  Do() << "Wrong Number, ";
+		cout << "Please Enter a number between 1 and 3? ";
+		cin >> Number;
+	}
+
+	return Number;
+}
+int Player1(int Number)
+{
+	
+	switch (Number)
+	{
+	case 1:
+		return enUse::Stone;
+	case 2:
+		return enUse::Paper;
+	case 3:
+		return enUse::Scisser;
+	}
+}
+int Computer1(enUse Use)
+{
+	switch (Use)
+	{
+	case 1:
+		return enUse::Stone;
+	case 2:
+		return enUse::Paper;
+	case 3:
+		return enUse::Scisser;
+	}
+}
+string Print()
+{
+	int Number = ReadNumber();
+    enUse Use = (enUse)RandomNumber(1, 3);
+	cout << "\n\n\n\n\n";
+	cout << Do() << "**********************" << endl;
+	cout << Do() << "**********************" << endl;
+	cout << Do() << "**********************" << endl;
+	cout << Do() << "Player  : " << Number << "\n";
+	cout << Do() << "Computer: " << Use << "\n";
+	cout << Do() << "**********************" << endl;
+	cout << Do() << "**********************" << endl;
+	cout << Do() << "**********************" << endl;
+
+	if ((Player1(Number) == enUse::Stone) && (Computer1(Use) == enUse::Stone))
+	{
+		cout << "\a";
+		system("color 7F");
+		return "Equal";
+	}
+	else if ((Player1(Number) == enUse::Paper) && (Computer1(Use) == enUse::Paper))
+	{
+		cout << "\a";
+		system("color 7F");
+		return "Equal";
+	}
+	else if ((Player1(Number) == enUse::Scisser) && (Computer1(Use) == enUse::Scisser))
+	{
+		cout << "\a";
+		system("color 7F");
+		return "Equal";
+	}
+	else if ((Player1(Number) == enUse::Stone) && (Computer1(Use) == enUse::Paper))
+	{
+		system("color 2F");
+		return "Computer";
+	}
+	else if ((Player1(Number) == enUse::Stone) && (Computer1(Use) == enUse::Scisser))
+	{
+		system("color 5F");
+		return "Player";
+	}
+	else if ((Player1(Number) == enUse::Paper) && (Computer1(Use) == enUse::Stone))
+	{
+		system("color 5F");
+		return "Player";
+	}
+	else if ((Player1(Number) == enUse::Paper) && (Computer1(Use) == enUse::Scisser))
+	{
+		system("color 2F");
+		return "Computer";
+	}
+	else if ((Player1(Number) == enUse::Scisser) && (Computer1(Use) == enUse::Stone))
+	{
+		system("color 2F");
+		return "Computer";
+	}
+	else if ((Player1(Number) == enUse::Scisser) && (Computer1(Use) == enUse::Paper))
+	{
+		system("color 5F");
+		return "Player";
+	}
+}
+void Again()
+{
+	char AddMore = 'Y';
+	do
+	{
+		system("cls");
+		system("color 0F");
+		cout << Do() << "Result: " << Print() << endl;
+
+		cout << Do() << "do You Want to Try again?Y/N? ";
+		cin >> AddMore;
+		if (AddMore == 'n')
+		{
+			system("cls");
+			system("color 0F");
+			cout << Do() << "***************************\n";
+			cout << Do() << "***************************\n";
+			cout << Do() << "***************************\n";
+			cout << Do() << "***************************\n";
+			cout << Do() << "GAME===================OVER";
+			cout << "\n";
+			cout << Do() << "***************************\n";
+			cout << Do() << "***************************\n";
+			cout << Do() << "***************************\n";
+			cout << Do() << "***************************\n";
+		}
+
+	} while (AddMore == 'Y' || AddMore == 'y');
+	
+}
+int main()
+{
+	srand((unsigned)time(NULL));
+	//cout <<  "Computer: " << Computer1((enUse)RandomNumber(1, 3)) << endl;
+	/*cout << "Player: " << Player1(ReadNumber()) << endl;*/
+	
+                 Again();
+
+	system("pause>0");
+	return 0;
+}

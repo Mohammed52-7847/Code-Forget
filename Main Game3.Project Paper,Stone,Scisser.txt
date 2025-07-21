@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+#include "clsUtil.h"
+#include "clsG1.h"
+using namespace std;
+
+int main()
+{
+	clsUtil::Srand();
+	//srand((unsigned)time(NULL));
+	/*clsG1 S;
+	S.StartGame();*/
+	clsG1::StartGame();
+
+	system("pause>0");
+	return 0;
+}

@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct stPrayTimes
+{
+	int Fajer;
+	int Zoher;
+	int Aser;
+	int Maghrep;
+	int Asha ;
+};
+stPrayTimes ReadPray()
+{
+	stPrayTimes Pt;
+	cout << "Enter Fajer: ";
+	cin >> Pt.Fajer;
+	cout << "Enter Zoher: ";
+	cin >> Pt.Zoher;
+	cout << "Enter Aser: ";
+	cin >> Pt.Aser;
+	cout << "Enter Maghrep: ";
+	cin >> Pt.Maghrep;
+	cout << "Enter Asha: ";
+	cin >> Pt.Asha;
+	return Pt;
+}
+void PrintPray(stPrayTimes Pt)
+{
+	cout << "\n_______________________\n";
+	cout << "Fajer   : " << Pt.Fajer << " AM" << endl;
+	cout << "Zoher   : " << Pt.Zoher << "PM" << endl;
+	cout << "Aser    : " << Pt.Aser << " PM" << endl;
+	cout << "Maghrep : " << Pt.Maghrep << " PM" << endl;
+	cout << "Asha    : " << Pt.Asha << " PM" << endl;
+	cout << "\n_______________________\n";
+}
+int main()
+{
+	//stPrayTimes Pt1{ 5,12,3,6,8 };
+	//stPrayTimes Pt1 = { 5,12,3,6,8 };
+	PrintPray(ReadPray());
+	system("pause>0");
+	return 0;
+}

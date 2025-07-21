@@ -1,0 +1,30 @@
+#pragma once
+#include <iostream>
+#include "clsSettingGame.h"
+#include "clsScreen.h"
+using namespace std;
+
+class clsG1:public clsSettingGame
+{
+public:
+
+	static void StartGame()
+	{
+		string Title = "\t\tPLAY GAME";
+
+
+		char PlayAgain = 'Y';
+		do
+		{
+			
+			ResetScreen();
+			_DrawScreenHeader(Title);
+			stGameResults GameResults = PlayGame(ReadHowManyRounds());
+			ShowGameOverScreen();
+			ShowFinalGameResults(GameResults);
+			cout << endl << Tabs(3) << "Do you want to play again? Y/N? ";
+			cin >> PlayAgain;
+		} while (PlayAgain == 'Y' || PlayAgain == 'y');
+	}
+};
+

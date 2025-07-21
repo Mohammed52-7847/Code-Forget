@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+int main()
+{
+	vector<int>vNumbers = { 10,20,30,40,50 };
+	cout << "***********************\n";
+	for (int &Number : vNumbers)
+	{
+		if (Number == 22||Number == 50)
+		{
+			cout << "Congratoulation\n";
+			return true;
+		}
+		//cout << Number << " ";
+	}
+	cout << endl;
+
+	cout << "No\n";
+	return false;
+
+	system("pause>0");
+	return 0;
+}
